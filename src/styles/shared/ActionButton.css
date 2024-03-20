@@ -1,0 +1,46 @@
+.action-btn {
+  cursor: pointer;
+
+  height: 32px;
+  width: 140px;
+
+  background-color: #f0f0f0;
+
+  border-radius: 5px;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+
+  padding: 5px 10px;
+
+  transition: all 0.2s;
+}
+
+.action-btn.active {
+  background-color: #3f37c9;
+
+  color: #fff;
+}
+
+.action-btn.active svg {
+  fill: #fff;
+}
+
+.action-btn.active:hover {
+  background-color: #4d47e4;
+}
+
+.action-btn.active:active {
+  background-color: #3f37c9;
+}
+
+.action-btn.pasive:hover {
+  background-color: #c5c5c5;
+}
+
+.action-btn.pasive:active {
+  background-color: #f0f0f0;
+}

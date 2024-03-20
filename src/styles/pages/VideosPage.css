@@ -1,0 +1,63 @@
+.videos-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.go-back-btn {
+  cursor: pointer;
+
+  height: 30px;
+  width: 30px;
+  min-width: 30px;
+
+  background-color: #3f37c9;
+
+  border: none;
+  border-radius: 5px;
+
+  transition: all 0.3s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  fill: white;
+}
+
+.go-back-btn:hover {
+  background-color: #4d47e4;
+}
+
+.go-back-btn:active {
+  background-color: #3f37c9;
+}
+
+#customers {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td,
+#customers th {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+#customers tr:hover {
+  background-color: #f2f2f2;
+}
+
+#customers td {
+  font-size: 14px;
+}
+
+#customers th {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+
+  padding: 10px;
+}

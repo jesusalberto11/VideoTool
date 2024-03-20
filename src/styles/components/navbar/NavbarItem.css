@@ -1,0 +1,37 @@
+.navbar-item {
+  cursor: pointer;
+
+  height: 32px;
+  width: 100%;
+
+  border-radius: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+
+  padding: 5px 10px;
+
+  transition: all 0.2s;
+}
+
+.navbar-item.active {
+  background-color: #3f37c9;
+
+  color: #fff;
+  fill: #fff;
+}
+
+.navbar-item:hover:not(.active) {
+  background-color: #4d47e4;
+  color: #fff;
+}
+
+.navbar-item:hover:not(.active) svg {
+  fill: #fff;
+}
+
+.navbar-item:active {
+  background-color: #3f37c9;
+}

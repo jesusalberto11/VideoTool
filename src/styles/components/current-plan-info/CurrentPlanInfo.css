@@ -1,0 +1,82 @@
+.current-plan-container {
+  background-color: #f0f2f5;
+
+  height: auto;
+  width: 100%;
+
+  border-radius: 5px;
+
+  padding: 5px;
+
+  flex-direction: column;
+  align-self: flex-start;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.current-plan-title {
+  color: #000;
+
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.current-plan-renewal {
+  font-size: 9px;
+
+  font-style: italic;
+}
+
+.current-plan-usage {
+  flex-direction: column;
+  gap: 5px;
+}
+
+.current-plan-usage-details {
+  font-size: 10px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.progress-bar-container {
+  height: 12px;
+  width: 100%;
+
+  background-color: #c5c5c5;
+}
+
+.progress-bar {
+  height: 100%;
+
+  background-color: #3f37c9;
+}
+
+.progress-bar-container,
+.progress-bar {
+  border-radius: 15px;
+}
+
+.handle-plan-btn {
+  cursor: pointer;
+
+  height: 32px;
+  width: auto;
+
+  background-color: #3f37c9;
+  color: #fff;
+
+  padding: 5px 10px;
+
+  border: none;
+  border-radius: 15px;
+}
+
+.handle-plan-btn:hover {
+  background-color: #4d47e4;
+}
+
+.handle-plan-btn:active {
+  background-color: #3f37c9;
+}

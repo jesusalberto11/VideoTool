@@ -1,0 +1,48 @@
+.page-container {
+  height: 100%;
+  width: 100%;
+
+  padding: 20px 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#customers {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td,
+#customers th {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+#customers tr:hover {
+  background-color: #f2f2f2;
+}
+
+#customers td {
+  font-size: 14px;
+}
+
+#customers th {
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+
+  padding: 10px;
+}
+
+.first-column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.video-name {
+  cursor: pointer;
+}

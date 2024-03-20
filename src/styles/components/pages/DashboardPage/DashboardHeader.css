@@ -1,0 +1,107 @@
+.dashboard-page-header {
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dashboard-header-top-part {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+form {
+  height: 32px;
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 5px 10px;
+
+  border: 1px solid #c5c5c5;
+}
+
+form,
+.search-btn,
+.searchbar,
+.search-separator {
+  border-radius: 5px;
+}
+
+.search-separator {
+  height: 100%;
+  width: 1px;
+
+  background-color: #c5c5c5;
+}
+
+.search-btn {
+  cursor: pointer;
+
+  height: 100%;
+
+  background-color: white;
+  border: none;
+}
+
+.searchbar {
+  height: 100%;
+  width: 370px;
+
+  border: none;
+  padding: 5px 5px;
+
+  outline: none;
+}
+
+.searchbar::placeholder {
+  color: #c5c5c5;
+}
+
+.searchbar:focus {
+  outline: 2px solid #3f37c9;
+}
+
+.radio {
+  display: none;
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+}
+
+.tab {
+  width: auto;
+
+  cursor: pointer;
+  user-select: none;
+
+  color: #000;
+
+  font-size: 14px;
+
+  padding: 5px 0px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  margin-bottom: -3px;
+}
+
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab {
+  color: #3f37c9;
+
+  border-bottom: 3px solid #3f37c9;
+}
+
+#one:checked ~ .tabs #one-tab svg,
+#two:checked ~ .tabs #two-tab svg {
+  fill: #3f37c9;
+}
