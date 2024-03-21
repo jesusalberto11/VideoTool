@@ -45,4 +45,12 @@
 
 .video-name {
   cursor: pointer;
+
+  text-decoration: none;
+
+  color: #000;
+}
+
+.video-name:hover {
+  text-decoration: underline;
 }
