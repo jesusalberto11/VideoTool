@@ -105,3 +105,16 @@ form,
 #two:checked ~ .tabs #two-tab svg {
   fill: #3f37c9;
 }
+
+@media screen and (max-width: 768px) {
+  .dashboard-header-top-part {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  form,
+  .searchbar {
+    width: 100%;
+  }
+}
