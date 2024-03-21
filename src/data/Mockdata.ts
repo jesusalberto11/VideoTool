@@ -1,7 +1,7 @@
-import { IVideo } from "../interfaces/IVideo";
+import { IVideoFolder } from "../interfaces/IVideoFolder";
 import { IVideoResponse } from "../interfaces/IVideoResponse";
 
-export const MOCK_DATA: Array<IVideo> = [
+export const MOCK_DATA: Array<IVideoFolder> = [
   {
     id: 0,
     name: "Afiliado Master",
