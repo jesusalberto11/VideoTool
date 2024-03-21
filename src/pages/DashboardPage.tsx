@@ -1,18 +1,23 @@
 import "../styles/pages/DashboardPage.css";
 import DashboardHeader from "../components/pages/DashboardPage/DashboardHeader";
 import { useEffect, useState } from "react";
-import { MOCK_DATA } from "../data/Mockdata";
-import { IVideo } from "../interfaces/IVideo";
+import { IVideoFolder } from "../interfaces/IVideoFolder";
 import { SVG_ICONS } from "../helpers/svgIcons";
 import { Link } from "react-router-dom";
+import { useVideosDrive } from "../hooks/useVideosDrive";
 
 const DashboardPage = () => {
-  const [videos, setVideos] = useState<Array<IVideo | null>>([null]);
+  const [videoFolders, setVideoFolders] = useState<Array<IVideoFolder | null>>([
+    null,
+  ]);
+  const { getVideosFolders } = useVideosDrive();
 
   useEffect(() => {
-    new Promise<Array<IVideo | null>>((resolve) => {
-      return resolve(MOCK_DATA);
-    }).then((response: Array<IVideo | null>) => setVideos(response));
+    getVideosFolders().then((response) => {
+      if (response) {
+        setVideoFolders(response);
+      }
+    });
   }, []);
 
   return (
@@ -31,7 +36,7 @@ const DashboardPage = () => {
             <th className="centered">Tamaño</th>
             <th className="centered">Última modificación</th>
           </tr>
-          {videos.map((video, index) => (
+          {videoFolders.map((folder, index) => (
             <tr key={index}>
               <td>
                 <div className="first-column">
@@ -44,14 +49,14 @@ const DashboardPage = () => {
                   >
                     <path d={SVG_ICONS.FOLDER} />
                   </svg>
-                  <Link className="video-name" to={`video/${video?.id}`}>
-                    {video?.name}
+                  <Link className="video-name" to={`video/${folder?.id}`}>
+                    {folder?.name}
                   </Link>
                 </div>
               </td>
-              <td className="centered">{video?.videos_count}</td>
-              <td className="centered">{video?.size}</td>
-              <td className="centered">{video?.last_modified}</td>
+              <td className="centered">{folder?.videos_count}</td>
+              <td className="centered">{folder?.size}</td>
+              <td className="centered">{folder?.last_modified}</td>
             </tr>
           ))}
         </tbody>

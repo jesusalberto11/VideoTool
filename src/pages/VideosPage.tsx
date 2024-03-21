@@ -1,39 +1,29 @@
 import "../styles/pages/VideosPage.css";
 import { useEffect, useState } from "react";
-import { MOCK_DATA_VIDEO } from "../data/Mockdata";
 import { SVG_ICONS } from "../helpers/svgIcons";
 import { IVideoResponse } from "../interfaces/IVideoResponse";
 import { Link, useParams } from "react-router-dom";
+import { useVideosDrive } from "../hooks/useVideosDrive";
 
 const VideosPage = () => {
   const params = useParams();
-  const [video, setVideo] = useState<IVideoResponse | null>(null);
+  const { findVideoFolderById } = useVideosDrive();
+  const [folder, setFolder] = useState<IVideoResponse | null>(null);
 
   useEffect(() => {
-    findVideoById(Number(params?.videoId))
-      .then((video) => {
-        if (video) {
-          setVideo(video);
-        } else {
-          console.error("No se encontró ningún video con ese ID.");
+    findVideoFolderById(Number(params?.videoId))
+      .then((response) => {
+        if (response) {
+          setFolder(response);
         }
       })
       .catch((error) => {
-        console.error("Error al buscar el video:", error.message);
+        console.error(
+          "Error al obtener los datos de la carpeta de video:",
+          error.message
+        );
       });
   }, []);
-
-  const findVideoById = (videoId: number): Promise<IVideoResponse | null> => {
-    return new Promise((resolve, reject) => {
-      const foundVideo = MOCK_DATA_VIDEO.find((video) => video?.id === videoId);
-
-      if (foundVideo) {
-        resolve(foundVideo);
-      } else {
-        reject(new Error(`No se encontró ningún video con el ID ${videoId}`));
-      }
-    });
-  };
 
   return (
     <div className="page-container">
@@ -50,7 +40,7 @@ const VideosPage = () => {
           </svg>
         </Link>
         <p>
-          Home / <strong>{video?.name}</strong>
+          Home / <strong>{folder?.name}</strong>
         </p>
       </div>
       <table id="video-table">
@@ -66,7 +56,7 @@ const VideosPage = () => {
             <th className="centered">Duración</th>
             <th className="hidde-responsive centered">Última modificación</th>
           </tr>
-          {video?.videos.map((video, index) => (
+          {folder?.videos.map((video, index) => (
             <tr key={index}>
               <td>
                 <div className="first-column">
