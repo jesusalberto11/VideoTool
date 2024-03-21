@@ -1,8 +1,7 @@
 import "./App.css";
+import { Outlet } from "react-router-dom";
 import CurrentPlanInfo from "./components/current-plan-info/CurrentPlanInfo";
 import AppNavbar from "./components/navbar/AppNavbar";
-import DashboardPage from "./pages/DashboardPage";
-// import VideosPage from "./pages/VideosPage";
 
 function App() {
   return (
@@ -13,8 +12,7 @@ function App() {
         <CurrentPlanInfo />
       </aside>
       <main className="main-content">
-        <DashboardPage />
-        {/* <VideosPage /> */}
+        <Outlet />
       </main>
     </div>
   );
