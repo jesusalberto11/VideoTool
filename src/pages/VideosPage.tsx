@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { MOCK_DATA_VIDEO } from "../data/Mockdata";
 import { SVG_ICONS } from "../helpers/svgIcons";
 import { IVideoResponse } from "../interfaces/IVideoResponse";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const VideosPage = () => {
   const params = useParams();
@@ -38,11 +38,17 @@ const VideosPage = () => {
   return (
     <div className="page-container">
       <div className="videos-page-header">
-        <button className="go-back-btn" type="button" title="Go back">
+        <Link
+          className="go-back-btn"
+          type="button"
+          title="Regresar al inicio"
+          to={"/"}
+          replace={true}
+        >
           <svg width="16" height="16" fill="#fff" viewBox="0 0 16 16">
             <path d={SVG_ICONS.GO_BACK} />
           </svg>
-        </button>
+        </Link>
         <p>
           Home / <strong>{video?.name}</strong>
         </p>
