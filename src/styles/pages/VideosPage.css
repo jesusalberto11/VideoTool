@@ -62,8 +62,35 @@
   padding: 10px;
 }
 
+.empty-folder {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+
+  text-align: center;
+}
+
+.empty-folder-img {
+  height: 300px;
+  width: 100%;
+}
+
 @media screen and (max-width: 768px) {
   .hidde-responsive {
     display: none;
+  }
+
+  .empty-folder {
+    gap: 35px;
+  }
+
+  .empty-folder-img {
+    height: 200px;
+    width: 100%;
   }
 }

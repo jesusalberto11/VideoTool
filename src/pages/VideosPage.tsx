@@ -4,6 +4,7 @@ import { SVG_ICONS } from "../helpers/svgIcons";
 import { IVideoResponse } from "../interfaces/IVideoResponse";
 import { Link, useParams } from "react-router-dom";
 import { useVideosDrive } from "../hooks/useVideosDrive";
+import EmptyListImg from "../assets/empty-list.svg";
 
 const VideosPage = () => {
   const params = useParams();
@@ -43,44 +44,55 @@ const VideosPage = () => {
           Home / <strong>{folder?.name}</strong>
         </p>
       </div>
-      <table id="video-table">
-        <tbody>
-          <tr>
-            <th style={{ width: "60%" }}>
-              <div className="first-column">
-                <input type="checkbox" />
-                Nombre
-              </div>
-            </th>
-            <th className="hidde-responsive centered">Tamaño</th>
-            <th className="centered">Duración</th>
-            <th className="hidde-responsive centered">Última modificación</th>
-          </tr>
-          {folder?.videos.map((video, index) => (
-            <tr key={index}>
-              <td>
+      {folder?.videos && folder?.videos?.length > 0 ? (
+        <table id="video-table">
+          <tbody>
+            <tr>
+              <th style={{ width: "60%" }}>
                 <div className="first-column">
                   <input type="checkbox" />
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="#3f37c9"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d={SVG_ICONS.PLAY_CIRCLE} />
-                  </svg>
-                  <p className="video-name">{video?.title}</p>
+                  Nombre
                 </div>
-              </td>
-              <td className="hidde-responsive centered">{video?.size}</td>
-              <td className="centered">{video?.duration}</td>
-              <td className="hidde-responsive centered">
-                {video?.last_modified}
-              </td>
+              </th>
+              <th className="hidde-responsive centered">Tamaño</th>
+              <th className="centered">Duración</th>
+              <th className="hidde-responsive centered">Última modificación</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+            {folder?.videos.map((video, index) => (
+              <tr key={index}>
+                <td>
+                  <div className="first-column">
+                    <input type="checkbox" />
+                    <svg
+                      width="16"
+                      height="16"
+                      fill="#3f37c9"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d={SVG_ICONS.PLAY_CIRCLE} />
+                    </svg>
+                    <p className="video-name">{video?.title}</p>
+                  </div>
+                </td>
+                <td className="hidde-responsive centered">{video?.size}</td>
+                <td className="centered">{video?.duration}</td>
+                <td className="hidde-responsive centered">
+                  {video?.last_modified}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <div className="empty-folder">
+          <h2>Este folder de videos está vacio!</h2>
+          <img
+            className="empty-folder-img"
+            src={EmptyListImg}
+            alt="No hay videos en el folder"
+          />
+        </div>
+      )}
     </div>
   );
 };
