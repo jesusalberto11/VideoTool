@@ -23,7 +23,7 @@ const DashboardPage = () => {
           <tr>
             <th style={{ width: "60%" }}>
               <div className="first-column">
-                <input type="checkbox" />
+                <input type="checkbox" readOnly={true} />
                 Nombre
               </div>
             </th>
@@ -35,7 +35,7 @@ const DashboardPage = () => {
             <tr key={index}>
               <td>
                 <div className="first-column">
-                  <input type="checkbox" />
+                  <input type="checkbox" readOnly={true} />
                   <svg
                     width="16"
                     height="16"
