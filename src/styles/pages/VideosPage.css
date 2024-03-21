@@ -35,29 +35,35 @@
   background-color: #3f37c9;
 }
 
-#customers {
+#video-table {
   border-collapse: collapse;
   width: 100%;
 }
 
-#customers td,
-#customers th {
+#video-table td,
+#video-table th {
   border-bottom: 1px solid #ddd;
   padding: 10px;
 }
 
-#customers tr:hover {
+#video-table tr:hover {
   background-color: #f2f2f2;
 }
 
-#customers td {
+#video-table td {
   font-size: 14px;
 }
 
-#customers th {
+#video-table th {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
 
   padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .hidde-responsive {
+    display: none;
+  }
 }

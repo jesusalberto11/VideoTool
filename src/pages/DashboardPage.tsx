@@ -18,7 +18,7 @@ const DashboardPage = () => {
   return (
     <div className="page-container">
       <DashboardHeader />
-      <table id="customers">
+      <table id="videos-table">
         <tbody>
           <tr>
             <th style={{ width: "60%" }}>

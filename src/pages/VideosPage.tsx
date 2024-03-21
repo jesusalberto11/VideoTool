@@ -53,7 +53,7 @@ const VideosPage = () => {
           Home / <strong>{video?.name}</strong>
         </p>
       </div>
-      <table id="customers">
+      <table id="video-table">
         <tbody>
           <tr>
             <th style={{ width: "60%" }}>
@@ -62,9 +62,9 @@ const VideosPage = () => {
                 Nombre
               </div>
             </th>
-            <th className="centered">Tamaño</th>
+            <th className="hidde-responsive centered">Tamaño</th>
             <th className="centered">Duración</th>
-            <th className="centered">Última modificación</th>
+            <th className="hidde-responsive centered">Última modificación</th>
           </tr>
           {video?.videos.map((video, index) => (
             <tr key={index}>
@@ -82,9 +82,11 @@ const VideosPage = () => {
                   <p className="video-name">{video?.title}</p>
                 </div>
               </td>
-              <td className="centered">{video?.size}</td>
+              <td className="hidde-responsive centered">{video?.size}</td>
               <td className="centered">{video?.duration}</td>
-              <td className="centered">{video?.last_modified}</td>
+              <td className="hidde-responsive centered">
+                {video?.last_modified}
+              </td>
             </tr>
           ))}
         </tbody>
