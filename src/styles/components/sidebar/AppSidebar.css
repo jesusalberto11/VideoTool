@@ -73,6 +73,10 @@
   z-index: 9;
 }
 
+.close-sd {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   .app-sidebar {
     position: fixed;
@@ -101,5 +105,9 @@
     left: 0;
 
     z-index: 9999;
+  }
+
+  .close-sd {
+    display: block;
   }
 }

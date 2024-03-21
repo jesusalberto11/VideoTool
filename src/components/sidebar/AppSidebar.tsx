@@ -40,7 +40,7 @@ const AppSidebar = () => {
               loading="lazy"
             />
             <button
-              className="go-back-btn flex centered"
+              className="go-back-btn close-sd flex centered"
               onClick={() => closeSidebar()}
             >
               <svg width="16" height="16" fill="#fff" viewBox="0 0 16 16">
