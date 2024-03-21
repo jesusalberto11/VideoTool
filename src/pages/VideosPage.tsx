@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import { MOCK_DATA_VIDEO } from "../data/Mockdata";
 import { SVG_ICONS } from "../helpers/svgIcons";
 import { IVideoResponse } from "../interfaces/IVideoResponse";
+import { useParams } from "react-router-dom";
 
 const VideosPage = () => {
+  const params = useParams();
   const [video, setVideo] = useState<IVideoResponse | null>(null);
 
   useEffect(() => {
-    findVideoById(0)
+    findVideoById(Number(params?.videoId))
       .then((video) => {
         if (video) {
           setVideo(video);
