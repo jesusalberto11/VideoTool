@@ -5,7 +5,7 @@
 
 ## :star2: About the Project
 
-This repository contains a landing page about a pool company, it was created using:
+This repository contains a Dashboard of an App called "VideoTool", it was created using:
 
 <ul>
 <li>React + Vite</li>
@@ -19,11 +19,11 @@ This repository contains a landing page about a pool company, it was created usi
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="https://github.com/jesusalberto11/PruebaTecnicaTreea/blob/main/assets/img/github-readme/section-1.png" alt="App_Image_1" title="First section" />
+  <img src="https://github.com/jesusalberto11/VideoTool/blob/main/src/assets/app_image_1.png" alt="App_Image_1" title="First section" />
 </div>
 
 <div align="center"> 
-  <img src="https://github.com/jesusalberto11/PruebaTecnicaTreea/blob/main/assets/img/github-readme/section-2.png" alt="App_Image_2" title="Second section"/>
+  <img src="https://github.com/jesusalberto11/VideoTool/blob/main/src/assets/app_image_2.png" alt="App_Image_2" title="Second section"/>
 </div>
 
 <!-- Getting Started -->
